@@ -1,5 +1,19 @@
-controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute
+home:
+    path: /
+    controller: App\Controller\DefaultController::home
+
+descente:
+    path: /descente
+    controller: App\Controller\DefaultController::descente
+
+etagere:
+    path: /etagere
+    controller: App\Controller\DefaultController::etagere
+
+produit:
+    path: /produit
+    controller: App\Controller\DefaultController::produit
+
+view:
+    path: /view
+    controller: App\Controller\DefaultController::view
