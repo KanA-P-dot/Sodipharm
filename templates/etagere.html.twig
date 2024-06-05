@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Etagere{% endblock %}
+
+{% block body %}
+<div class="accueil">
+    <div class="header">
+        <a href="{{ path('home') }}"><img src="{{ asset('/img/sodipharm.png') }}" alt="Sodipharm logo" class="logo"></a>
+    </div>
+    <h1>Etagére</h1>
+    <div class="form-container">
+        <div class="form-inputs">
+            <label for="hauteur">Hauteur etager en partant du faut:</label>
+            <input type="number" id="hauteur-etage" name="hauteur" min="0">
+
+            <button id="add-etagere">Add</button>
+            
+            <button id="nav-to-produits">Suivant</button>
+        </div>
+        <div class="preview">
+            <div id="rectangle-preview"></div>
+            <div id="etagere-container"></div>
+        </div>
+    </div>
+</div>
+<script src="{{ asset('js/etagere.js') }}"></script>
+{% endblock %}

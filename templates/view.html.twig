@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}View{% endblock %}
+
+{% block body %}
+<div class="accueil">
+    <div class="header">
+        <a href="{{ path('home') }}"><img src="{{ asset('/img/sodipharm.png') }}" alt="Sodipharm logo" class="logo"></a>
+        <a href="{{ path('descente') }}"><button class="add-button">+</button></a>
+    </div>
+    <h1>View</h1>
+    <!-- Example structure, replace with actual content -->
+    <div class="shelves">
+        <div class="shelf">
+            <p>Shelf 1</p>
+        </div>
+        <div class="shelf">
+            <p>Shelf 2</p>
+        </div>
+        <!-- More shelves as needed -->
+    </div>
+</div>
+{% endblock %}

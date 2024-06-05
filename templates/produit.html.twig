@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Etagere{% endblock %}
+
+{% block body %}
+<head>
+    <style>
+        body {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        #rectangle-preview {
+            border: 1px solid #000;
+            position: relative;
+            width: 200px;
+            height: 400px;
+        }
+        .single-etagere {
+            background-color: #ccc;
+            border-bottom: solid 1px #000;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .product-list {
+            display: flex;
+            flex-direction: column;
+        }
+        .product {
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            place-self: end;
+        }
+    </style>
+</head>
+<div class="accueil">
+    <div class="header">
+        <a href="{{ path('home') }}"><img src="{{ asset('/img/sodipharm.png') }}" alt="Sodipharm logo" class="logo"></a>
+    </div>
+    <h1>Produits</h1>
+    <div class="form-container">
+    <div id="rectangle-preview">
+        <div id="etagere-container"></div>
+    </div>
+    <div class="product-list">
+        <div class="product" draggable="true" id="product1" data-width="50" data-height="30">Produit 1 (50x30px)</div>
+        <div class="product" draggable="true" id="product2" data-width="50" data-height="40">Produit 2 (50x40px)</div>
+        <div class="product" draggable="true" id="product3" data-width="10" data-height="10">Produit 3 (10x10px)</div>
+    </div>
+    </div>
+
+<script src="{{ asset('js/produits.js') }}"></script>
+{% endblock %}

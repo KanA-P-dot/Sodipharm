@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Descente{% endblock %}
+
+{% block body %}
+<div class="accueil">
+    <div class="header">
+        <a href="{{ path('home') }}"><img src="{{ asset('/img/sodipharm.png') }}" alt="Sodipharm logo" class="logo"></a>
+    </div>
+    <h1>Descente</h1>
+    <div class="form-container">
+        <div class="form-inputs">
+            <label for="hauteur">Hauteur : <i>en cm</i></label>
+            <input type="number" id="hauteur" name="hauteur" min="0" value="200">
+            
+            <label for="largeur">Largeur : <i>en cm</i></label>
+            <input type="number" id="largeur" name="largeur" min="0" value="100">
+            
+            <button type="button" id="next-button">Suivant</button>
+        </div>
+        <div class="preview">
+            <div id="rectangle-preview">
+                <div id="hauteur-label" class="dimension-label"></div>
+                <div id="largeur-label" class="dimension-label"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{{ asset('js/descente.js') }}"></script>
+{% endblock %}
