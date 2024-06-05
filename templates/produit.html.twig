@@ -30,10 +30,14 @@
         .product-list {
             display: flex;
             flex-direction: column;
+            height: 200px;
+            max-width: 800px;
+            overflow-y: scroll;
+            margin-left: 30px;
         }
         .product {
             cursor: pointer;
-            background-color: #4CAF50;
+            background-color: #283593;
             color: white;
             place-self: end;
         }
@@ -49,11 +53,34 @@
         <div id="etagere-container"></div>
     </div>
     <div class="product-list">
-        <div class="product" draggable="true" id="product1" data-width="50" data-height="30">Produit 1 (50x30px)</div>
-        <div class="product" draggable="true" id="product2" data-width="50" data-height="40">Produit 2 (50x40px)</div>
-        <div class="product" draggable="true" id="product3" data-width="10" data-height="10">Produit 3 (10x10px)</div>
+        <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Produit</th>
+                <th>Hauteur</th>
+                <th>Largeur</th>
+                <th>Longueur</th>
+                <th>Poids</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for produit in Produits %}
+                <tr class="product" draggable="true" id="product{{ produit.id }}" data-width="{{ produit.LARGPRODUIT / 10 }}" data-height="{{ produit.HAUTPRODUIT / 10 }}">
+                    <td>{{ produit.id }}</td>
+                    <td>{{ produit.Produit }}</td>
+                    <td>{{ produit.HAUTPRODUIT }}</td>
+                    <td>{{ produit.LARGPRODUIT }}</td>
+                    <td>{{ produit.LONGPRODUIT }}</td>
+                    <td>{{ produit.PDSPRODUIT }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
     </div>
     </div>
+    
+
 
 <script src="{{ asset('js/produits.js') }}"></script>
 {% endblock %}

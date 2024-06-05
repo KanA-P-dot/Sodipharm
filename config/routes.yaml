@@ -12,7 +12,7 @@ etagere:
 
 produit:
     path: /produit
-    controller: App\Controller\DefaultController::produit
+    controller: App\Controller\ProduitController::index
 
 view:
     path: /view
