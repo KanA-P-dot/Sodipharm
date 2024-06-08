@@ -49,14 +49,18 @@ function ajouterEtagere(nouvelleHauteur) {
   const hauteurDisponible = hauteur - hauteurTotaleEtagere;
 
   if (nouvelleHauteur <= hauteurDisponible) {
+    // Enlever 1px de la hauteur visuelle de l'étagère
+    const hauteurEtagereVisuelle = nouvelleHauteur - 1;
+
     const etagere = document.createElement('div');
     etagere.style.width = `${largeur}px`;
-    etagere.style.height = `${nouvelleHauteur}px`;
+    etagere.style.height = `${hauteurEtagereVisuelle}px`;
     etagere.style.backgroundColor = '#ccc';
     etagere.style.borderBottom = 'solid 1px #000';
     etagere.classList.add('single-etagere');
     etagereContainer.appendChild(etagere);
 
+    // Conserver la hauteur totale correcte
     hauteurTotaleEtagere += nouvelleHauteur;
     hauteursEtagere.push(nouvelleHauteur);
   } else {

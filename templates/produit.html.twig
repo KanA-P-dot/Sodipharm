@@ -48,6 +48,7 @@
         <a href="{{ path('home') }}"><img src="{{ asset('/img/sodipharm.png') }}" alt="Sodipharm logo" class="logo"></a>
     </div>
     <h1>Produits</h1>
+    <button type="button" id="next-button">Enregistrer</button>
     <div class="form-container">
     <div id="rectangle-preview">
         <div id="etagere-container"></div>
@@ -66,9 +67,9 @@
         </thead>
         <tbody>
             {% for produit in Produits %}
-                <tr class="product" draggable="true" id="product{{ produit.id }}" data-width="{{ produit.LARGPRODUIT / 10 }}" data-height="{{ produit.HAUTPRODUIT / 10 }}">
+                <tr class="product" draggable="true" id="product{{ produit.id }}" data-width="{{ produit.LONGPRODUIT / 10 }}" data-height="{{ produit.LARGPRODUIT / 10 }}">
                     <td>{{ produit.id }}</td>
-                    <td>{{ produit.Produit }}</td>
+                    <td class="Name">{{ produit.Produit }}</td>
                     <td>{{ produit.HAUTPRODUIT }}</td>
                     <td>{{ produit.LARGPRODUIT }}</td>
                     <td>{{ produit.LONGPRODUIT }}</td>
